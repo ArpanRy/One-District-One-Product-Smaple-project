@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        /* Clear floats after the columns */
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Seller Documentation Form</h2>
+    <!-- <p>Resize the browser window to see the effect. When the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other.</p> -->
+
+    <div class="container">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <!--             <div class="row">
+                <div class="col-25">
+                    <label for="uid">Unique ID</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="uid" name="Uid" placeholder="U ID..">
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="nameff" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="emailff">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="emailff" name="Email" placeholder="Email..">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="phoneff">Phone number</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="phoneff" name="Phone" placeholder="Phone Number..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="product_districtff">District</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="product_districtff" name="District" placeholder="product District..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="product_nameff">Shop Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="shop_nameff" name="product_namef" placeholder="Shop name..">
+                </div>
+            </div>
+            <h4>ODOP Shop Information</h4>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="categoryff">Category</label>
+                </div>
+                <div class="col-75">
+                    <select id="categoryff" name="purposef">
+                        <option value="Personal Use">Agriculture</option>
+                        <option value="Selling">Health</option>
+                        <option value="Selling">Home Upliance</option>
+                        <option value="Order for Event">Art Carft or Heritage</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="workersff">Number of Workers in your shop</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="workersff" name="firstname" placeholder=" number">
+                </div>
+            </div>
+            <!--             <div class="row">
+                <div class="col-25">
+                    <label for="daysf">number of outlets</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="daysf" name="firstname" placeholder=" number">
+                </div>
+            </div> -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="daysf">Size of shop</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="sizeff" name="firstname" placeholder=" number">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="daysf">Margin versus turnover,</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="daysf" name="firstname" placeholder=" number">
+                </div>
+                <div class="row">
+                    <div class="col-25">
+                        <label for="addressff">Location </label>
+                    </div>
+                    <div class="col-75">
+                        <textarea id="addressff" name="addressff" placeholder="Location and Size of shop"
+                            style="height:100px"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <h4>Trade License or GST no' or Registration Documents and shop Picture</h4>
+                    <div class="col-25">
+
+                        <label for="docsff">Upload Shop Documents</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="file" id="docsff" name="filename">
+                        <input type="Upload">
+                    </div>
+                </div>
+                <div class="row">
+                    <button id="btnff" type="submit">Send</button>
+                </div>
+        </form>
+    </div>
+
+
+    <!--<form action="/action_page.php">
+  <input type="file" id="myFile" name="filename">
+  <input type="submit">
+</form>      -->
+
+
+
+
+    <script defer type="module" src="crud_two.js"></script>
+
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script_top product.js"></script>
+    <!--     <script>
+
+        function sendEmail() {
+            console.log('Ji hello')
+            Email.send({
+                Host: "smtp.gmail.com",
+                Username: "royshashwat55@gmail.com",
+                Password: "Gmail@01",
+                To: 'shashwatroy.documents@gmail.com',
+                From: document.getElementById("emailf").value,
+                Subject: "Order form!!",
+                Body: "Name: " + document.getElementById("namef").value
+                    + "<br> Email: " + document.getElementById("emailf").value +
+                    "<br> Phone no: " + document.getElementById("phonef").value +
+                    "<br> Address: " +
+                    document.getElementById("addressf").value
+                    + "<br> Product Name: " +
+                    document.getElementById("product_namef").value
+                    + "<br> Quantity : " + document.getElementById("quantityf").value
+            }).then(
+                message => alert(message)
+            );
+        }
+
+
+
+        // var btn = document.getElementById('btn');
+        // btn.addEventListener('click', function (e) {
+        //     e.preventDefaul();
+        //     console.log('Hello');
+        // });
+    </script> -->
+</body>
+
+
+</html>

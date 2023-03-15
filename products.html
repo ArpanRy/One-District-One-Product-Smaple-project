@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+        rel="stylesheet">
+
+    <title>One District One Product</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--
+
+TemplateMo 546 Sixteen Clothing
+
+https://templatemo.com/tm-546-sixteen-clothing
+
+-->
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="assets/css/fontawesome.css">
+    <link rel="stylesheet" href="assets/css/templatemo-sixteen.css">
+    <link rel="stylesheet" href="assets/css/owl.css">
+
+    <style>
+        button {
+            margin: 20px;
+        }
+
+        .custom-btn {
+            width: 130px;
+            height: 40px;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 25px;
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            background: transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            display: inline-block;
+            box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+                7px 7px 20px 0px rgba(0, 0, 0, .1),
+                4px 4px 5px 0px rgba(0, 0, 0, .1);
+            outline: none;
+        }
+
+
+        /* 3 */
+        .btn-3 {
+            background: rgb(0, 172, 238);
+            background: linear-gradient(0deg, rgba(0, 172, 238, 1) 0%, rgba(2, 126, 251, 1) 100%);
+            width: 130px;
+            height: 40px;
+            line-height: 42px;
+            padding: 0;
+            border: none;
+
+        }
+
+        .btn-3 span {
+            position: relative;
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-3:before,
+        .btn-3:after {
+            position: absolute;
+            content: "";
+            right: 0;
+            top: 0;
+            background: rgba(2, 126, 251, 1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-3:before {
+            height: 0%;
+            width: 2px;
+        }
+
+        .btn-3:after {
+            width: 0%;
+            height: 2px;
+        }
+
+        .btn-3:hover {
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .btn-3:hover:before {
+            height: 100%;
+        }
+
+        .btn-3:hover:after {
+            width: 100%;
+        }
+
+        .btn-3 span:hover {
+            color: rgba(2, 126, 251, 1);
+        }
+
+        .btn-3 span:before,
+        .btn-3 span:after {
+            position: absolute;
+            content: "";
+            left: 0;
+            bottom: 0;
+            background: rgba(2, 126, 251, 1);
+            transition: all 0.3s ease;
+        }
+
+        .btn-3 span:before {
+            width: 2px;
+            height: 0%;
+        }
+
+        .btn-3 span:after {
+            width: 0%;
+            height: 2px;
+        }
+
+        .btn-3 span:hover:before {
+            height: 100%;
+        }
+
+        .btn-3 span:hover:after {
+            width: 100%;
+        }
+
+        ::-webkit-scrollbar {
+            width: 20px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: lightgray;
+            border-radius: 5px;
+        }
+
+
+
+        .title {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .video {
+            width: 100%;
+            height: 400px;
+            margin: auto;
+            display: block;
+            border: none;
+        }
+
+        .popup-btn,
+        .close-btn {
+            width: 100px;
+            height: 50px;
+            display: block;
+            margin: 50px auto;
+            cursor: pointer;
+            border: 2px solid black;
+            background-color: white;
+        }
+
+
+
+        .video-popup {
+            display: none;
+            width: 100%;
+            height: 100vh;
+            margin: auto;
+            position: fixed;
+            top: 0;
+            boxshadow: 10px 10px 10px 10px black;
+        }
+
+        .popup-bg {
+            background: rgba(0, 0, 0, 0.8);
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+        }
+
+        .popup-content {
+            background: black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 800px;
+            height: auto;
+        }
+
+        .popup-title {
+            padding: 30px;
+            margin: 0 auto;
+            color: red;
+            text-transform: uppercase;
+        }
+
+
+        * {
+            box-sizing: border-box;
+        }
+
+        input[type=text],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        label {
+            padding: 12px 12px 12px 0;
+            display: inline-block;
+        }
+
+        input[type=submit] {
+            background-color: #04AA6D;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            float: right;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        /*         .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        } */
+
+        .col-25 {
+            float: left;
+            width: 25%;
+            margin-top: 6px;
+        }
+
+        .col-75 {
+            float: left;
+            width: 75%;
+            margin-top: 6px;
+        }
+
+        .product-item {
+
+            padding: 10px;
+            box-shadow: 5px 10px 8px #888888;
+        }
+
+        /* Clear floats after the columns */
+        /*         .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        } */
+
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+
+            .col-25,
+            .col-75,
+            input[type=submit] {
+                width: 100%;
+                margin-top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--     <script src="/district_products.js"></script>
+    <script type="module" src="/script_top product.js"></script> -->
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+              <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <h2>OD<em>OP</em></h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="products.html">Top Product Of Districts </a>
+                        </li>
+
+                        <!--                        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li> -->
+
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="event.html">Post Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="formc.html">Register Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Sell Your Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Login/Sign up</a>
+                        </li>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Page Content -->
+    <div class="page-heading products-heading header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4>SHOP PRODUCTS</h4>
+                        <h2>District-wise</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-popup" id="myForm" style="margin: 30px; padding: 20px; display: none">
+        <form onsubmit="sendEmail(); reset(); return false;">
+            <div class="row">
+                <div class="col-25">
+                    <label for="uid">Unique ID</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="uid" name="Uid" placeholder="U ID..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="namef" name="firstname" placeholder="Your name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="emailf">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="emailf" name="Email" placeholder="Email..">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-25">
+                    <label for="phonef">Phone number</label>
+                </div>
+                <div class="col-75">
+                    <input type="number" id="phonef" name="Phone" placeholder="Phone Number..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="product_districtf">Product District</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="product_districtf" name="District" placeholder="product District..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="product_namef">Product Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="product_namef" name="product_namef" placeholder="Product name..">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="quantityf">Quantity</label>
+                </div>
+                <div class="col-75">
+                    <select id="quantityf" name="quantityf">
+                        <option value="Bulk">Bulk</option>
+                        <option value="Few Pieces">Few Pieces</option>
+                        <option value="Order for Event">Order for Event</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="purpose">Purpose</label>
+                </div>
+                <div class="col-75">
+                    <select id="purposef" name="purposef">
+                        <option value="Personal Use">Personal Use</option>
+                        <option value="Selling">Selling</option>
+                        <!--                         <option value="Order for Event">Order for Event</option> -->
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="daysf">Reqired in how many days</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" id="daysf" name="firstname" placeholder="Days in number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="addressf">Address</label>
+                </div>
+                <div class="col-75">
+                    <textarea id="addressf" name="addressf" placeholder="Full Address" style="height:200px"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <button id="btn" type="submit">Send</button>
+                <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </div>
+        </form>
+        <!--         <form action="#" class="form-container">
+            <h1>Login</h1>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form> -->
+    </div>
+
+    <div id="all_products" class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="filters">
+                        <ul>
+                            <li class="active" id="xyz" value="123" data-filter="*">All District-Wise Products </li>
+                            <!--               <li data-filter=".des">New Items</li>
+              <li data-filter=".dev">Handicrafts</li>
+              <li data-filter=".gra">Made With Love</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 all" hidden id="top_product_demo">
+                    <div class="product-item">
+                        <!--             <iframe width="420" height="315" src="https://www.youtube.com/embed/tgbNymZ7vqY" style="display: none;">
+            </iframe> -->
+
+                        <a href="#"><img width="300" height="300" alt=""></a>
+                        <div class="down-content">
+                            <a href="#">
+                                <h4></h4>
+                            </a>
+                            <h6></h6>
+                            <p></p>
+                            <!--                     <ul class="stars">
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                      <li><i class="fa fa-star"></i></li>
+                    </ul>
+                    <span>Reviews (12)</span> -->
+                            <!--                             <div class="add-to-cart"> -->
+                            <!--                                 onclick= "window.location.href='forma.html'"  -->
+
+                            <button class="add-cart" onclick="window.location.href='forma.html'">Order Now</button>
+                            <button class="custom-btn btn-3" id="popupbtn">Know more</button>
+
+
+                            <!--                          
+                                <a class="add-cart" id="ordnow" href="/forma.html" class="btn btn-primary" >Order
+                            Now</a> -->
+                            <!--                         </div> -->
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+                <!--         <div class="col-md-12">
+          <ul class="pages">
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+          </ul>
+        </div> -->
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-12">
+        <div class="filters-content">
+            <div class="row grid" id="top_products">
+            </div>
+        </div>
+    </div>
+
+    <div class="video-popup" id="popup" style="display: none;">
+        <div class="popup-bg" id="popupbg"></div>
+        <div class="popup-content">
+            <!--         <p class="popup-title">Youtube</p> -->
+            <iframe src="https://youtube.com/embed/A2rEZKPfAIs?autoplay=0 " class="video"></iframe>
+            <button class="close-btn" id="closebtn">close</button>
+        </div>
+    </div>
+
+    <!--   <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <p>Copyright &copy; One District One Product Co., Ltd.
+              - Design: <a rel="nofollow noopener" href="https://templatemo.com  target=" _blank">TemplateMo</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+ -->
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="assets/js/custom.js"></script>
+    <script src="assets/js/owl.js"></script>
+    <script src="assets/js/slick.js"></script>
+    <script src="assets/js/isotope.js"></script>
+    <script src="assets/js/accordions.js"></script>
+
+    <script src="/district_products.js"></script>
+    <script type="module" src="/script_top product.js"></script>
+    <script language="text/Javascript">
+
+
+        cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+        function clearField(t) {                   //declaring the array outside of the
+            if (!cleared[t.id]) {                      // function makes it static and global
+                cleared[t.id] = 1;  // you could use true and false, but that's more typing
+                t.value = '';         // with more chance of typos
+                t.style.color = '#fff';
+            }
+        }
+    </script>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            document.getElementById("all_products").style.display = "block";
+        }
+
+
+    </script>
+
+
+
+</body>
+
+</html>
