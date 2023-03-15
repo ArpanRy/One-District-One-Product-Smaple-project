@@ -1,1 +1,1 @@
-# SIH_ODOP_Project
+# One_District_One_Product Sample project
